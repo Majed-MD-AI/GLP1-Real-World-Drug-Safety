@@ -30,6 +30,24 @@ Among FDA adverse-event reports, which pre-specified safety events are dispropor
 2. Reporting Odds Ratio (ROR) with 95% CI for each Drug × Event pair
 3. Serious-report and calendar-year sensitivity analyses
 4. Conservative regulatory/RWE interpretation
+   
+## Initial Results
+
+The initial disproportionality analysis identified elevated reporting odds ratios across all pre-specified drug–event pairs in the current FAERS query framework.
+
+The strongest signal was observed for liraglutide and pancreatitis (ROR 18.08, 95% CI 17.44–18.75). Pancreatitis was also disproportionately reported with semaglutide (ROR 6.40, 95% CI 6.10–6.72) and dulaglutide (ROR 5.85, 95% CI 5.59–6.13).
+
+For semaglutide, elevated reporting signals were also observed for cholelithiasis (ROR 5.07), vomiting (ROR 4.95), gastroparesis (ROR 4.56), cholecystitis (ROR 4.50), and nausea (ROR 4.42).
+
+Gastroparesis produced relatively high ROR estimates for liraglutide (ROR 9.93) and dulaglutide (ROR 4.41), but these estimates were based on small numbers of matching reports and therefore had substantially wider confidence intervals.
+
+These findings should be interpreted strictly as pharmacovigilance reporting signals. FAERS is a spontaneous reporting system and cannot establish incidence, absolute risk, or causal treatment effects.
+
+### Forest plot
+
+![FAERS disproportionality signals for GLP-1 receptor agonists](figures/glp1_ror_forest_plot.png)
+
+Figure 1. Reporting Odds Ratios (RORs) with 95% confidence intervals for pre-specified adverse events associated with semaglutide, liraglutide, and dulaglutide in FDA FAERS. The dashed vertical line represents the null value (ROR = 1). The x-axis is displayed on a logarithmic scale. Estimates represent reporting disproportionality and should not be interpreted as causal risk estimates.
 
 ## Why this project
 
@@ -50,12 +68,15 @@ Base endpoint: `https://api.fda.gov/drug/event.json`
 
 ## Current milestone
 
-**v0.1**
-- research question defined
+v0.2
+- research question and analysis protocol defined
 - exposures and outcomes pre-specified
-- interpretation limits defined
-- reproducible openFDA data-access notebook scaffold created
-
+- openFDA data retrieval implemented
+- 18 drug–event combinations analysed
+- Reporting Odds Ratios and 95% confidence intervals calculated
+- forest plot generated
+- initial pharmacovigilance interpretation completed
+- 
 **Next milestone**
 - retrieve report counts
 - validate drug/event field definitions
