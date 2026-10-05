@@ -1,6 +1,6 @@
 # GLP-1 Receptor Agonist Pharmacovigilance Using FDA FAERS
 
-Status: v0.2 — initial disproportionality analysis complete
+**Status: v0.2 — initial disproportionality analysis complete**
 
 This project is a reproducible pharmacovigilance study exploring whether selected adverse events are disproportionately reported with commonly used GLP-1 receptor agonists in the FDA Adverse Event Reporting System (FAERS), accessed through the openFDA Drug Event API.
 
@@ -82,8 +82,7 @@ Because FAERS/openFDA is updated over time, report counts and disproportionality
 - Reporting Odds Ratios and 95% confidence intervals calculated
 - forest plot generated
 - initial pharmacovigilance interpretation completed
-
-  **Next milestone**
+**Next milestone**
 - validate drug exposure and MedDRA event definitions
 - perform serious-report sensitivity analysis
 - examine calendar-year reporting patterns
