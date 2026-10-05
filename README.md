@@ -1,6 +1,6 @@
 # GLP-1 Receptor Agonist Pharmacovigilance Using FDA FAERS
 
-**Status: v0.1 — protocol and analysis scaffold**
+Status: v0.2 — initial disproportionality analysis complete
 
 This project is a reproducible pharmacovigilance study exploring whether selected adverse events are disproportionately reported with commonly used GLP-1 receptor agonists in the FDA Adverse Event Reporting System (FAERS), accessed through the openFDA Drug Event API.
 
@@ -47,7 +47,7 @@ These findings should be interpreted strictly as pharmacovigilance reporting sig
 
 ![FAERS disproportionality signals for GLP-1 receptor agonists](figures/glp1_ror_forest_plot.png)
 
-Figure 1. Reporting Odds Ratios (RORs) with 95% confidence intervals for pre-specified adverse events associated with semaglutide, liraglutide, and dulaglutide in FDA FAERS. The dashed vertical line represents the null value (ROR = 1). The x-axis is displayed on a logarithmic scale. Estimates represent reporting disproportionality and should not be interpreted as causal risk estimates.
+Figure 1. Reporting Odds Ratios (RORs) with 95% confidence intervals for pre-specified adverse events reported with semaglutide, liraglutide, and dulaglutide in FDA FAERS. The dashed vertical line represents the null value (ROR = 1). The x-axis is displayed on a logarithmic scale. Estimates represent reporting disproportionality and should not be interpreted as incidence, absolute risk, or causal effects.
 
 ## Why this project
 
@@ -66,9 +66,15 @@ FDA FAERS via the official openFDA Drug Event API.
 
 Base endpoint: `https://api.fda.gov/drug/event.json`
 
+### Data snapshot
+
+Primary analysis accessed the openFDA Drug Event API on 5 October 2026.
+
+Because FAERS/openFDA is updated over time, report counts and disproportionality estimates may change when the analysis is re-run at a later date.
+
 ## Current milestone
 
-v0.2
+**v0.2**
 - research question and analysis protocol defined
 - exposures and outcomes pre-specified
 - openFDA data retrieval implemented
@@ -76,11 +82,13 @@ v0.2
 - Reporting Odds Ratios and 95% confidence intervals calculated
 - forest plot generated
 - initial pharmacovigilance interpretation completed
-- 
-**Next milestone**
-- retrieve report counts
-- validate drug/event field definitions
-- build first Drug × Event summary table
+
+  **Next milestone**
+- validate drug exposure and MedDRA event definitions
+- perform serious-report sensitivity analysis
+- examine calendar-year reporting patterns
+- assess robustness of the broad FAERS comparator
+- define the next longitudinal RWE step using EHR, claims, or registry data
 
 ## Tech stack
 Python, pandas, requests, NumPy, scipy, matplotlib, Jupyter Notebook
